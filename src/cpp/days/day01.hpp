@@ -18,7 +18,7 @@ inline auto Part1([[maybe_unused]] const std::vector<std::string>& data) -> std:
     return sum;
 }
 
-void replaceNumbers(std::string &str) {
+inline void replaceNumbers(std::string &str) {
     std::unordered_map<std::string, char> numMap = {
         {"one", '1'}, {"two", '2'}, {"three", '3'},
         {"four", '4'}, {"five", '5'}, {"six", '6'},
