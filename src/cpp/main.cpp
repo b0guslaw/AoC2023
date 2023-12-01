@@ -40,5 +40,5 @@ void Execute(F1 f1, F2 f2, const T& data) {
 using namespace aoc;
 
 int main() {
-    Execute<std::vector<std::int64_t>, std::int64_t, std::int64_t>(Day1::Part1, Day1::Part2, Input::GetIntData(INPUT_PATH + "day1.txt"));
+    Execute<std::vector<std::string>, std::int64_t, std::int64_t>(Day1::Part1, Day1::Part2, Input::GetStringData(INPUT_PATH + "day1.txt"));
 }
