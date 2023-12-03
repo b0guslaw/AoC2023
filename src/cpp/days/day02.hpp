@@ -7,10 +7,6 @@
 
 namespace aoc::Day2 {
 
-const uint32_t red_max = 12;
-const uint32_t green_max = 13;
-const uint32_t blue_max = 14;
-
 inline auto Part1([[maybe_unused]] const std::vector<std::string>& data) -> std::uint64_t {
     std::uint64_t sum{0};
     using std::operator""sv;
@@ -19,7 +15,7 @@ inline auto Part1([[maybe_unused]] const std::vector<std::string>& data) -> std:
     for (const auto& line : data) {
         bool possible{true};
         auto game = std::string_view(line.begin() + line.rfind(':') + 1, line.end());
-        const std::uint64_t red_max{12}, green_max{13}, blue_max{14};
+        constexpr std::uint64_t red_max{12}, green_max{13}, blue_max{14};
 
         for (const auto word : std::views::split(game, delim)) {
             auto segment = std::string_view(word);

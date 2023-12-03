@@ -10,8 +10,8 @@ inline auto Part1([[maybe_unused]] const std::vector<std::string>& data) -> std:
     const std::string numbers{"0123456789"};
     std::uint64_t sum{0};
     for (const auto& s : data) {
-        auto first = s.find_first_of(numbers);
-        auto last = s.find_last_of(numbers);
+        const auto first = s.find_first_of(numbers);
+        const auto last = s.find_last_of(numbers);
 
         sum += (s.at(first) - '0') * 10 + (s.at(last) - '0');
     }
@@ -19,7 +19,7 @@ inline auto Part1([[maybe_unused]] const std::vector<std::string>& data) -> std:
 }
 
 inline void replaceNumbers(std::string &str) {
-    std::unordered_map<std::string, char> numMap = {
+    static const std::unordered_map<std::string, char> numMap = {
         {"one", '1'}, {"two", '2'}, {"three", '3'},
         {"four", '4'}, {"five", '5'}, {"six", '6'},
         {"seven", '7'}, {"eight", '8'}, {"nine", '9'}
@@ -40,7 +40,7 @@ inline void replaceNumbers(std::string &str) {
                     if (firstNumPos == std::string::npos) {
                         firstNumPos = i;
                         str.replace(i, pair.first.size(), 1, pair.second);
-                        i++; // Increment to skip over the digit just inserted
+                        i++;
                         break;
                     } else {
                         lastNumPos = i;
@@ -67,8 +67,8 @@ inline auto Part2([[maybe_unused]] const std::vector<std::string>& data) -> std:
     for (const auto& s : data) {
         auto input = s;
         replaceNumbers(input);
-        auto first = input.find_first_of(numbers);
-        auto last = input.find_last_of(numbers);
+        const auto first = input.find_first_of(numbers);
+        const auto last = input.find_last_of(numbers);
         sum += (input.at(first) - '0') * 10 + (input.at(last) - '0');
     }
 
