@@ -11,6 +11,7 @@
 
 #include "Input.hpp"
 #include "days/day01.hpp"
+#include "days/day02.hpp"
 
 const std::string INPUT_PATH{"res/"};
 uint64_t day_count{0};
@@ -40,5 +41,15 @@ void Execute(F1 f1, F2 f2, const T& data) {
 using namespace aoc;
 
 int main() {
-    Execute<std::vector<std::string>, std::int64_t, std::int64_t>(Day1::Part1, Day1::Part2, Input::GetStringData(INPUT_PATH + "day1.txt"));
+    Execute<std::vector<std::string>,
+          std::int64_t, std::int64_t>(
+               Day1::Part1, Day1::Part2,
+                Input::GetStringData(INPUT_PATH + "day1.txt")
+                );
+
+    Execute<std::vector<std::string>,
+        std::int64_t, std::int64_t>(
+            Day2::Part1, Day2::Part2,
+            Input::GetStringData(INPUT_PATH + "day2.txt")
+            );
 }

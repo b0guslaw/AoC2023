@@ -5,7 +5,7 @@ SET(CMAKE_CONFIGURATION_TYPES ${CMAKE_BUILD_TYPE} CACHE STRING "" FORCE)
 
 include(FetchContent)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -20,7 +20,8 @@ FetchContent_MakeAvailable(fmt)
 find_package(Threads REQUIRED)
 
 add_executable(aoc src/cpp/main.cpp
-        src/cpp/days/day01.hpp)
+        src/cpp/days/day01.hpp
+        src/cpp/days/day02.hpp)
 
 target_compile_options(aoc PRIVATE -Wall -Wextra -Wpedantic -Werror -O3)
 
