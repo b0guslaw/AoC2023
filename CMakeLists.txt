@@ -9,6 +9,14 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+if (MSVC_VERSION GREATER_EQUAL "1900")
+    include(CheckCXXCompilerFlag)
+    CHECK_CXX_COMPILER_FLAG("/std:c++latest" _cpp_latest_flag_supported)
+    if (_cpp_latest_flag_supported)
+        add_compile_options("/std:c++latest")
+    endif()
+endif()
+
 file(COPY ${CMAKE_SOURCE_DIR}/res DESTINATION ${CMAKE_BINARY_DIR})
 
 FetchContent_Declare(fmt
@@ -21,9 +29,8 @@ find_package(Threads REQUIRED)
 
 add_executable(aoc src/cpp/main.cpp
         src/cpp/days/day01.hpp
-        src/cpp/days/day02.hpp)
-
-target_compile_options(aoc PRIVATE -Wall -Wextra -Wpedantic -Werror -O3)
+        src/cpp/days/day02.hpp
+        src/cpp/days/day03.hpp)
 
 target_link_libraries(aoc
         fmt::fmt

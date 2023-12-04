@@ -4,6 +4,7 @@
 #include <vector>
 #include <ranges>
 #include <string_view>
+#include <charconv>
 
 namespace aoc::Day2 {
 

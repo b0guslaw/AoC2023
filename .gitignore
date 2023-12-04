@@ -1,4 +1,9 @@
 /res
+/out
+/.vs
+/.idea
+/cmake-*
+CMakeSettings.json
 
 # Prerequisites
 *.d
