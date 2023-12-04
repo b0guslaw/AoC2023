@@ -10,7 +10,7 @@
 #include <algorithm>
 #include <numeric>
 
-namespace aoc::Day3 {
+namespace aoc::Day4 {
 
 inline auto view_to_vec(std::string_view& v) -> std::vector<int> {
     std::vector<int> numbers;
@@ -26,7 +26,7 @@ inline auto view_to_vec(std::string_view& v) -> std::vector<int> {
     }
     std::sort(numbers.begin(), numbers.end());
     return numbers;
-    };
+ };
 
 inline auto Part1([[maybe_unused]] const std::vector<std::string>& data) -> std::uint64_t {
     std::uint64_t sum{0};
