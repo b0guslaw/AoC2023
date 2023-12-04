@@ -54,6 +54,8 @@ int main() {
             Input::GetStringData(INPUT_PATH + "day2.txt")
         );
 
+    day_count++;
+
     Execute<std::vector<std::string>,
         std::int64_t, std::int64_t>(
             Day4::Part1, Day4::Part2,
