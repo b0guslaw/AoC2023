@@ -30,6 +30,7 @@ find_package(Threads REQUIRED)
 add_executable(aoc src/cpp/main.cpp
         src/cpp/days/day01.hpp
         src/cpp/days/day02.hpp
+        src/cpp/days/day03.hpp
         src/cpp/days/day04.hpp)
 
 target_link_libraries(aoc
