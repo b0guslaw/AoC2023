@@ -4,6 +4,7 @@
 /.idea
 /cmake-*
 CMakeSettings.json
+/build
 
 # Prerequisites
 *.d

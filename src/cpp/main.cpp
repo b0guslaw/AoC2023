@@ -14,6 +14,7 @@
 #include "days/day02.hpp"
 #include "days/day03.hpp"
 #include "days/day04.hpp"
+#include "days/day05.hpp"
 
 const std::string INPUT_PATH{"res/"};
 uint64_t day_count{0};
@@ -65,5 +66,11 @@ int main() {
         std::int64_t, std::int64_t>(
             Day4::Part1, Day4::Part2,
             Input::GetStringData(INPUT_PATH + "day4.txt")
+        );
+
+    Execute<std::vector<std::string>,
+        std::int64_t, std::int64_t>(
+            Day5::Part1, Day5::Part2,
+            Input::GetStringData(INPUT_PATH + "day5.txt")
         );
 }
